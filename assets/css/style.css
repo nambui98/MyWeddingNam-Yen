@@ -476,6 +476,7 @@ img {
 
 .theme-btn, .view-cart-btn,
 .theme-btn-s3,
+.theme-btn-s5,
 .theme-btn-s4 {
   background: #a3888c;
   color: #fff;
@@ -573,7 +574,15 @@ img {
 .theme-btn-s4:hover:after {
   border: 1px solid #96777b;
 }
-
+.theme-btn-s5{
+background-color: #fff;
+color:#96777b;
+  border: 1px solid #96777b;
+}
+.theme-btn-s5:hover{
+  background-color: #96777b;
+  color:#fff;
+}
 .view-cart-btn {
   display: block;
   margin-top: 15px;
@@ -4841,7 +4850,8 @@ wpo-hero-slider-s3
 .wpo-video-section {
   position: relative;
   z-index: 1;
-  background: url(../images/cta.jpg) no-repeat center center;
+  background: url(../images/slider/12.jpg) no-repeat center center;
+  background-size: cover;
   height: 400px;
   background-attachment: fixed;
 }
