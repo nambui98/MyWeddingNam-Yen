@@ -15,6 +15,13 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:title" content="Nam Yến Wedding">
+    <meta name="og:description"
+        content="Đám cưới là một lẽ đương nhiên của cuộc sống, và em là lẽ đương nhiên trong cuộc sống của tôi">
+    <meta property="og:url" content="http://namyen.vercel.app/" />
+    <meta property="og:image" content="assets/images/slider/5.jpg" />
+    <meta property="og:site_name" content="Nam Yến Wedding">
+    <meta name="twitter:card" content="summary_large_image">
     <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -32,6 +39,7 @@
     <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
     <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
 </head>
 
 <body>
@@ -78,7 +86,7 @@
                                     <button class="menu-close"><i class="ti-close"></i></button>
                                     <ul class="nav navbar-nav mb-2 mb-lg-0">
                                         <li>
-                                            <a href="#home">Trang trủ</a>
+                                            <a href="#home">Trang chủ</a>
                                             <!-- <ul class="sub-menu">
                                                 <li><a href="indx.html">Main Home</a></li>
                                                 <li><a class="active" href="index-2.html">Announcement S1</a></li>
@@ -696,9 +704,10 @@
 
                         </h2>
 
-                        <br/>
-                        <br/>
-                        <i>Sự có mặt của bạn là niềm hạnh phúc của chúng tôi, nếu bạn không tới được hãy gửi lời chúc qua đây nha </i>&#128513;
+                        <br />
+                        <br />
+                        <i>Sự có mặt của bạn là niềm hạnh phúc của chúng tôi, nếu bạn không tới được hãy gửi lời chúc
+                            qua đây nha </i>&#128513;
                     </div>
                     <form method="post" class="contact-validation-active" id="contact-form-main">
                         <div class="submit-area" id="buttonGift">
@@ -733,9 +742,26 @@
     <!-- end wpo-event-section -->
     <section class="wpo-video-section">
         <h2 class="hidden">some</h2>
-        <a href="https://www.youtube.com/embed/_z1-ovqxG8Y" class="video-btn" data-type="iframe"><i
-                class="fi flaticon-play"></i></a>
+        <button class="video-btn" onclick="showVideo()"><i class="fi flaticon-play"></i></button>
     </section>
+    <div class="wapper-video" id="wapper-video">
+        <div class="video-player">
+            <video width="320" height="240" loop id="video">
+                <source src="assets/video/namyen.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
     <section class="wpo-portfolio-section section-padding" id="gallery">
         <div class="container">
             <div class="row">
@@ -969,6 +995,24 @@
             }
             e.target.className = "theme-btn-s4";
             document.getElementById('qrGift').setAttribute('src', `assets/images/qr${value}.jpg`)
+        }
+
+        let popup = document.getElementById("wapper-video");
+
+        let video = document.getElementById("video");
+
+        function showVideo() {
+            video.play()
+            console.log();
+            popup.style.display = "block"
+            popup.style.opacity = 1
+        }
+        window.onclick = function (event) {
+            if (event.target == popup) {
+                popup.style.display = "none";
+                popup.style.opacity = 0
+                video.load()
+            }
         }
     </script>
 </body>
